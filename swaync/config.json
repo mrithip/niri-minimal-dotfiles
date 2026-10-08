@@ -1,0 +1,127 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 8,
+  "control-center-margin-bottom": 8,
+  "control-center-margin-right": 8,
+  "control-center-margin-left": 0,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "fit-to-screen": true,
+  "relative-timestamps": true,
+  "control-center-width": 440,
+  "control-center-height": 720,
+  "notification-window-width": 440,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+  "widgets": [
+    "buttons-grid",
+    "mpris",
+    "backlight",
+    "volume",
+    "inhibitors",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "notifications": {
+      "vexpand": true
+    },
+    "inhibitors": {
+      "text": "Inhibitors",
+      "button-text": "Clear All",
+      "clear-all-button": true
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear All"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 5,
+      "text": "Label Text"
+    },
+    "mpris": {
+      "blacklist": [],
+      "autohide": false,
+      "show-album-art": "always",
+      "loop-carousel": true,
+      "image-size": 64,
+      "image-radius": 14
+    },
+    "volume": {
+      "device": "default",
+      "label": "󰕾",
+      "slider": true
+    },
+    "backlight": {
+      "device": "amdgpu_bl1",
+      "label": "☀",
+      "slider": true,
+      "min": 10
+    },
+    "buttons-grid": {
+      "buttons-per-row": 3,
+      "actions": [
+        {
+          "label": "󰌪",
+          "type": "toggle",
+          "command": "powerprofilesctl set power-saver && notify-send 'Power' 'Power Saver Mode Enabled' && (sleep 0.05 && swaync-client --reload-config)",
+          "update-command": "sh -c '[ $(powerprofilesctl get) = power-saver ] && echo true || echo false'"
+        },
+        {
+          "label": "󰾅 ",
+          "type": "toggle",
+          "command": "powerprofilesctl set balanced && notify-send 'Power' 'Balanced Mode Enabled' && (sleep 0.05 && swaync-client --reload-config)",
+          "update-command": "sh -c '[ $(powerprofilesctl get) = balanced ] && echo true || echo false'"
+        },
+        {
+          "label": "󱐋",
+          "type": "toggle",
+          "command": "powerprofilesctl set performance && notify-send 'Power' 'Performance Mode Enabled' && (sleep 0.05 && swaync-client --reload-config)",
+          "update-command": "sh -c '[ $(powerprofilesctl get) = performance ] && echo true || echo false'"
+        },
+        {
+          "label": "󰸉 ",
+          "type": "button",
+          "active": true,
+          "command": "swaync-client -t -sw; sh -c '$HOME/.config/swaybg/random_wallpaper.sh'"
+        },
+        {
+          "label": "󰣆 ",
+          "type": "button",
+          "active": true,
+          "command": "swaync-client -t -sw; sh -c 'fuzzel'"
+        },
+        {
+          "label": "󰌾",
+          "type": "button",
+          "active": true,
+          "command": "swaync-client -t -sw; sh -c 'swaylock'"
+        }
+      ]
+    }
+  }
+}

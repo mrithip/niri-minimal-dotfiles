@@ -1,0 +1,26 @@
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Editor and temp files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.tmp
+*.log
+
+# Local runtime data
+.cache/
+local/
+.local/
+.env
+.env.*
+
+# Optional generated files
+Screenshots/
+wallpapers/
+
+# Keep personal scripts outside the repo if you prefer
+# For example: ~/.local/bin/
