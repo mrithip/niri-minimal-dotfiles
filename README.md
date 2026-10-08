@@ -81,7 +81,3 @@ This configuration is designed for a polished, low-noise Linux desktop experienc
 - Update the monitor output name in `niri/config.kdl` if it does not match your hardware
 - Adjust the border, accent colors, and panel shortcuts for your own taste
 - Remove or replace widgets you do not use in `waybar/config`
-
-## License
-
-This project is shared as personal configuration files for learning and customization. Use it as a base, then adapt it to your own machine and workflow.
